@@ -6,7 +6,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-st.title('Text Classification')
+st.title('News Classification')
 
 #load stopwords
 nltk.download('stopwords')
@@ -18,7 +18,7 @@ dbFile = open('LogisticRegression.pickle', 'rb')
 model = pickle.load(dbFile)
 
 # taking data from user and convert to dataframe
-news = st.text_area('Text to translate')
+news = st.text_area('Enter the news article here to classify:')
 if st.button('Submit'):
     dict = {'news': [news]}
     df = pd.DataFrame(dict)
